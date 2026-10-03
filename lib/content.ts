@@ -9,7 +9,7 @@ export const links = {
 };
 export const steps=[{title:'Stimulate',text:'Notice sensory input and areas of tension. The full method explores targeted stimulation.'},{title:'Recruit',text:'Bring attention to deliberate muscular activity and the surrounding movement pattern.'},{title:'Move',text:'Explore comfortable movement and how different areas work together.'},{title:'Reassess',text:'Return to the same baseline. Record what changed, including when nothing changed.'}];
 export const pages:Record<string,{title:string,eyebrow:string,description:string}>={
- learn:{title:'Learn your body. Start with observation.',eyebrow:'THE METHOD',description:'An introduction to Autonomic Bio Recovery Maneuvers, developed by Matthew Roberts through his personal exploration of movement and chronic discomfort.'},
+ learn:{title:'Learn your body. Start with observation.',eyebrow:'THE METHOD',description:'Explore Matthew Roberts’ nonmedical, nonsurgical approach to pain and whole-body well-being through awareness, deliberate movement, and reassessment.'},
  watch:{title:'See ABRM in motion.',eyebrow:'DEMONSTRATIONS',description:'Explore Matthew’s demonstrations on TikTok and YouTube. Watch the context, observe the movement, and learn the language of ABRM.'},
  podcast:{title:'A conversation worth listening to.',eyebrow:'THE MATTHEW ROBERTS PODCAST',description:'Personal experiences, movement, ideas, and the story behind ABRM. Listen to the published episodes on Spotify.'},
  books:{title:'The story. The ideas. The next chapter.',eyebrow:'BOOKS BY MATTHEW ROBERTS',description:'Explore the Chronic Pain Help Guide, its audiobook, and other works from Matthew’s growing body of writing.'},
