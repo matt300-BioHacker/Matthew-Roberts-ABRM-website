@@ -1,29 +1,41 @@
 # ABRM — Matthew Roberts
 
-ABRM is a wellness and education platform built around Matthew Roberts' ABRM methodology, movement education, demonstrations, courses, community, books, merchandise, and private services.
+The working V1 public education hub for Autonomic Bio Recovery Maneuvers.
 
-## Product vision
+Built with TypeScript, React, Vinext, Cloudflare Workers, and D1. Public education
+remains free. Books and media link to the supplied destinations. Premium courses,
+POD merchandise, membership, scheduling, email delivery, and the fitness app are
+clearly marked as upcoming or unconnected.
 
-Build one free public hub with a premium member layer. Visitors can learn what ABRM is, explore educational material, watch demonstrations, join the email list, discover books and merchandise, and connect to the ABRM community. Members can access premium courses and resources, while private clients can request coaching or consultations.
+## Develop
 
-## Planned ecosystem
+Install with the project’s pnpm lockfile, then run `pnpm dev`.
+Run `pnpm exec tsc --noEmit` to validate types and `pnpm build` for production.
+On the managed Sites environment, use the supplied Sites workflow scripts for
+installation, builds, and publishing.
 
-- Public ABRM education and methodology overview
-- Maneuver / movement library
-- Video hub linking YouTube and TikTok demonstrations
-- Free guide and email capture
-- Books and merchandise storefront integrations
-- Free and premium courses
-- Premium member access
-- Private 1-on-1 coaching
-- Private consultations
-- Facebook group and Skool community links
-- Research/evidence library and claims documentation
-- Future ABRM AI educational assistant
-- Progress/session tracking for appropriate wellness and education use
+## Content and assets
 
-## Repository status
+- `lib/content.ts`: navigation, platform destinations, page metadata, core model.
+- `app/page.tsx`: homepage.
+- `app/[section]/page.tsx`: supporting pages.
+- `components/abrm`: navigation, shared presentation, consent-based forms.
+- `public/media`: supplied artwork optimized for web delivery.
+- `public/abrm-starter-guide.pdf`: polished free reader guide.
+- `scripts/create-guide.py`: reproducible PDF generation (ReportLab).
 
-This repository began as an intentionally minimal foundation. Product architecture and content models are being established before the application UI is built.
+## Forms and persistence
 
-See docs/product-spec.md, docs/architecture.md, docs/content-model.md, and docs/safety-and-claims.md for the foundation.
+`POST /api/subscribe` saves consenting email signups in D1.
+`POST /api/inquiry` saves consenting coaching/consultation inquiries in D1.
+The site does not send automatic email or confirm bookings. No public endpoint
+exposes stored submissions. `db/schema.ts` and `drizzle/` own schema changes.
+
+## Authentication
+
+GitHub access is separate from customer authentication. ABRM member accounts and
+paid entitlements are not implemented yet. No secret belongs in Git. Future paid
+instruction must be gated on the server and excluded from public bundles.
+
+See `docs/v1-implementation.md` for active features, limitations, and launch work.
+The foundation documents remain in `docs/` for the wider platform roadmap.
