@@ -1,0 +1,11 @@
+import type {Metadata} from 'next';
+import Link from 'next/link';
+import {notFound} from 'next/navigation';
+import {projects,projectBySlug} from '@/lib/projects';
+import {External} from '@/components/abrm/shared';
+
+export function generateStaticParams(){return projects.map(({slug})=>({slug}));}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const project=projectBySlug[slug];return project?{title:project.title,description:project.summary}:{};}
+
+export default async function ProjectPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const project=projectBySlug[slug];if(!project)notFound();return <main id="main" className="wrap"><section className="page-hero"><Link href="/projects" className="text-link">← All projects</Link><span className="eyebrow project-kicker">{project.eyebrow}</span><h1>{project.title}</h1><p>{project.summary}</p><span className="tag">{project.status}</span></section><div className="project-detail">{project.sections.map((section)=><section className="project-section" key={section.heading}><span className="eyebrow">{project.eyebrow}</span><h2>{section.heading}</h2><p>{section.body}</p>{section.bullets&&<ul className="feature-list">{section.bullets.map((bullet)=><li key={bullet}>{bullet}</li>)}</ul>}</section>)}<aside className="project-source"><div><span className="eyebrow">ORIGINAL PROJECT</span><p>Open the original shared project for its full prototype and source context.</p></div><External className="button outline" href={project.sourceUrl}>View original</External></aside>{project.slug.includes('research')||project.slug==='pilot-study'||project.slug==='academic-brief'?<div className="notice"><p>Research status: these materials describe proposals and personal observations, not established ABRM effects. They are not medical advice, a treatment recommendation, or an invitation to participate in research. Human-subject research requires appropriate ethics review and qualified oversight.</p></div>:null}<div className="button-row project-back"><Link className="button" href="/projects">Browse all projects</Link><Link className="text-link" href="/research">Read ABRM research context</Link></div></div></main>}
+
