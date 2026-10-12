@@ -44,7 +44,7 @@ export const projects: Project[] = [
     slug: 'academic-brief', title: 'One-page academic brief', eyebrow: 'RESEARCH COLLABORATION',
     summary: 'A concise request for research partners to critique the ABRM question, measurement plan, and safety requirements.',
     status: 'Working brief · documentation in progress',
-    sourceUrl: 'https://cdn.fbsbx.com/v/t65.102178-21/841753382_903220036061880_5351881264495772101_n.jpg/abrm_researcher_one_pager.html?_nc_ht=cdn.fbsbx.com&_nc_ohc=1QjlWJsn8mwQ7kNvwG-zHY4&sdl=0&ccb=14-4&oh=00_AQMKvIry9BQfT5mhKyJBTwH6tRj-2JoEiIXFo9FS2SRpnA&oe=6AEF5ABC&_nc_sid=4ee932',
+    sourceUrl: '/research-documents/academic-brief.html',
     sections: [
       { heading: 'Central question', body: 'Can a self-directed sequence of sensory input and movement produce measurable acute changes in reported pain location, movement, or recruitment that can be distinguished from a comparison condition?' },
       { heading: 'What collaboration would help', body: 'The brief seeks methodological critique and support defining a safe, reproducible protocol. It is not seeking endorsement of efficacy or research participants.', bullets: ['Review the protocol and outcome measures', 'Help define blinding and a suitable comparison condition', 'Advise on safety review and the path toward ethics approval'] },
@@ -52,10 +52,10 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug: 'research-white-paper', title: 'Integrated research hypothesis', eyebrow: 'PREPRINT · NOT PEER REVIEWED',
-    summary: 'A working framework connecting ABRM’s proposed sequence to questions that experiments could confirm, refine, or reject.',
+    slug: 'research-white-paper', title: 'Integrated research guide', eyebrow: 'PREPRINT · NOT PEER REVIEWED',
+    summary: 'Matthew’s complete conceptual research guide, presented for scientists and peers to examine the proposed sequence, mechanisms, measurements, and study pathway.',
     status: 'Research draft · v1.0 · for expert critique',
-    sourceUrl: 'https://cdn.fbsbx.com/v/t65.102178-21/841902982_2176004976682237_3502116850834338915_n.jpg/abrm_integrated_hypothesis_white.html?_nc_ht=cdn.fbsbx.com&_nc_ohc=EQvka0JKQWQQ7kNvwFXq1FN&sdl=0&ccb=14-4&oh=00_AQPZBp8tY7LAA8N8ASYJPnkbpdPtAlGO5uD8_aQEgfubPA&oe=6AEF6E74&_nc_sid=4ee932',
+    sourceUrl: '/research-documents/integrated-research-guide.html',
     sections: [
       { heading: 'A testable sequence', body: 'The draft organizes the idea as target, compress, signal, upper-cervical sensory input, move or observe redistribution, recruit, reinforce, and adapt. Each link is a proposed part of the model; the chain is not an established mechanism.' },
       { heading: 'How it could be tested', body: 'The document proposes measurable outcomes and comparison conditions, including pain maps, range of motion, force, EMG, autonomic markers, and follow-up. A useful result could be evidence against the hypothesis as well as evidence that supports further study.' },
@@ -76,4 +76,3 @@ export const projects: Project[] = [
 ];
 
 export const projectBySlug = Object.fromEntries(projects.map((project) => [project.slug, project])) as Record<string, Project>;
-
