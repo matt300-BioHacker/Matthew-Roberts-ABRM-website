@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import {projectBySlug} from '@/lib/projects';
+export function ProjectLinks({slugs,title,description}:{slugs:string[],title:string,description:string}){return <section className="related-projects"><span className="eyebrow">PROJECTS & RESOURCES</span><h2>{title}</h2><p>{description}</p><div className="project-grid">{slugs.map(slug=>{const p=projectBySlug[slug];return <article key={slug} className="project-card"><span className="tag">{p.status}</span><h3><Link href={`/projects/${slug}`}>{p.title}</Link></h3><p>{p.summary}</p><Link className="text-link" href={`/projects/${slug}`}>Explore this project</Link></article>})}</div></section>}
